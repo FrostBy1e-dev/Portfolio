@@ -7,11 +7,13 @@ function loadHTML(selector, url) {
         element.innerHTML = data;
         const parser = new DOMParser();
         const doc = parser.parseFromString(data, 'text/html');
-        eval(doc.querySelector('script').textContent);
+        const scriptElement = doc.querySelector('script');
+        if (scriptElement) {
+          eval(scriptElement.textContent);
+        }
       });
   }
 }
 
-// Load navbar and footer
 loadHTML('.nav', '/Navigation/navheader.html');
 loadHTML('.footer', '/Navigation/footer.html');
