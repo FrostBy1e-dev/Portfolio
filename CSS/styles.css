@@ -290,6 +290,57 @@ img {
   align-items: center;
 }
 
+.popup {
+  display: none;
+  position: absolute;
+  background-color: var(--first-color);
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+  z-index: 1000;
+  animation: pop 0.3s ease-in-out;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.popup.show {
+  display: block;
+  animation: pop 0.3s ease-in-out;
+}
+
+.popup.hide {
+  display: block;
+  animation: zoomOut 0.3s ease-in-out;
+}
+
+@keyframes zoomOut {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+.popup:hover {
+  background-color: var(--first-color-alt);
+}
+
 .workexp {
   font-weight: bold;
   font-size: var(--mb-1-5);
