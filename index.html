@@ -12,7 +12,18 @@
   </style>
   <!--UNICONS-->
   <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" />
+  <!-- Icon -->
+  <link rel="icon" href="/Images/icon.webp" type="images/x-icon">
 
+  <!-- Early dark mode check script -->
+  <script>
+    const darkTheme = 'dark-theme';
+    const selectedTheme = localStorage.getItem('selected-theme');
+
+    if (selectedTheme === 'dark') {
+      document.body.classList.add(darkTheme);
+    }
+  </script>
 </head>
 
 <body>
